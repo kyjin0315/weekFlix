@@ -1,0 +1,365 @@
+/*  mobile first  */
+header {
+  background-color: antiquewhite;
+  height: 200px;
+  box-sizing: border-box;
+  background-image: url(./images/visual.jpg);
+  background-position: center top;
+  background-size: cover;
+}
+
+/* .header__container {
+width: 100%;
+} */
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
+  align-items: center;
+  background-color: white;
+}
+
+h1 {
+  width: 100px;
+  margin: auto;
+}
+
+.lnb {
+  position: fixed;
+  top: -500px;
+  width: 100%;
+}
+.lnb > ul {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  background-color: white;
+  align-items: flex-start;
+  padding-left: 30px;
+}
+.lnb a {
+  display: flex;
+  line-height: 40px;
+  padding-top: 10px;
+}
+.lnb span {
+  display: block;
+  height: 30px;
+  width: 30px;
+  margin: auto;
+  margin-right: 20px;
+  background-image: url(./images/icon_sprites.png);
+}
+.lnb li:nth-child(1) span {
+  background-position: -63px -65px;
+}
+.lnb li:nth-child(2) span {
+  background-position: -10px -117px;
+}
+.lnb li:nth-child(3) span {
+  background-position: -60px -117px;
+}
+.lnb li:nth-child(4) span {
+  background-position: -106px -117px;
+}
+
+.bars:hover ~ .lnb {
+  top: 60px;
+}
+
+section {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.content01,
+.content02,
+.content03 {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 20px 0;
+}
+.content01 {
+  background-color: greenyellow;
+}
+.content02 {
+  background-color: green;
+}
+.content03 {
+  background-color: skyblue;
+}
+
+.content01 .icon,
+.content02 span,
+.content03 span {
+  display: block;
+  width: 40px;
+  height: 40px;
+  background-image: url(./images/icon_sprites.png);
+}
+
+.content01 button,
+.content02 button,
+.content03 button {
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.content01 .icon {
+  background-position: -63px -10px;
+}
+.content02 span {
+  background-position: -116px -10px;
+}
+.content03 span {
+  background-position: -10px -65px;
+}
+
+.content04,
+.content05,
+.content09 {
+  display: none;
+}
+
+.content06 {
+  /* grid-column: 1/4; */
+  grid-column: span 3;
+  border: 1px solid orange;
+  height: 200px;
+}
+
+.content07 {
+  height: 250px;
+}
+.content08 {
+  grid-column: -1/-2;
+  text-align: right;
+  position: relative;
+}
+
+.content07 > div,
+.content08 > div {
+  width: 152%;
+  background-color: skyblue;
+  height: 100%;
+}
+.content08 > div {
+  position: absolute;
+  right: 0;
+  background: url(./images/02사이버홍보관.png);
+}
+.content07 > div {
+  background: url(./images/04건강보험웹진.png);
+  border-radius: 10px;
+}
+
+.different {
+  background-color: rgb(208, 236, 247);
+  border-top: 1px solid skyblue;
+  padding: 50px 0;
+}
+
+.differnt__content {
+  display: grid;
+  gap: 10px;
+  grid-template-rows: repeat(4, 200px);
+}
+.differnt__content > div {
+  background-color: antiquewhite;
+}
+
+footer {
+  background-color: rgb(46, 46, 46);
+  color: white;
+
+  padding: 50px 0;
+}
+
+.footer_sitemap {
+  display: none;
+}
+
+#select {
+  display: none;
+}
+
+@media screen and (min-width: 641px) {
+  header {
+    height: 350px;
+  }
+  .content05 {
+    display: block;
+  }
+  .content06 {
+    grid-column: span 2;
+  }
+
+  .content07 > div,
+  .content08 > div {
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .content09 {
+    display: flex;
+    grid-column: span 3;
+    justify-content: space-between;
+  }
+  .content09 > div:nth-child(4) ~ div {
+    display: none;
+  }
+  .differnt__content {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 200px 200px;
+  }
+
+  .footer_address {
+    display: flex;
+    align-items: center;
+  }
+  #select {
+    display: block;
+  }
+}
+@media screen and (min-width: 1201px) {
+  header {
+    height: 500px;
+  }
+  .header {
+    width: 1200px;
+    justify-content: space-between;
+    margin: auto;
+    padding: 0 20px;
+  }
+  h1 {
+    margin: 0;
+  }
+  .lnb {
+    position: static;
+    /* top 속성이 사라지고 */
+    width: 800px;
+  }
+  .lnb a {
+    flex-direction: column;
+    line-height: 40px;
+    padding-top: 10px;
+  }
+  .bars {
+    display: none;
+  }
+  .lnb > ul {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  section {
+    width: 1200px;
+    margin: auto;
+    /* background-color: brown; */
+    grid-template-columns: repeat(3, 210px) 250px 250px;
+  }
+  .content04 {
+    display: block;
+    grid-column: span 2;
+
+    background-color: #ffe200;
+    border-radius: 60px 20px 20px 20px;
+    position: relative;
+    overflow: hidden;
+
+    /* box-shadow: 20px 0 0 20px yellow; */
+  }
+  .content04::after,
+  .content04::before {
+    content: "";
+    display: block;
+    width: 200px;
+    height: 200px;
+    border-radius: 200px;
+    /* background-color: yellow; */
+    background-image: linear-gradient(90deg, yellow, transparent);
+    position: absolute;
+    top: -70px;
+    left: -60px;
+    z-index: 2;
+  }
+  .content04::after {
+    background-image: linear-gradient(320deg, yellow, transparent);
+    top: 70px;
+    left: 320px;
+    z-index: 2;
+  }
+  .content04 > .circle {
+    width: 100px;
+    height: 100px;
+    border-radius: 100px;
+    background-color: rgba(255, 255, 0, 0.516);
+    position: absolute;
+    right: 100px;
+    top: 20px;
+    z-index: 2;
+  }
+  .content04 > .shadow {
+    width: 100%;
+    height: 100%;
+    background-color: #ffee00;
+    transform: translateX(-20px);
+    border-radius: 20px;
+    z-index: 1;
+  }
+  .content04 > .importent {
+    position: absolute;
+    z-index: 3;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 50px;
+  }
+  .content07 > div,
+  .content08 > div {
+    width: 100%;
+  }
+  .content09 {
+    grid-column: span 5;
+  }
+  .content09 > div:nth-child(4) ~ div {
+    display: block;
+  }
+
+  .different__container {
+    width: 1200px;
+    margin: auto;
+  }
+  .differnt__content {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 200px;
+  }
+
+  .footer_sitemap {
+    width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+  }
+
+  .line {
+    border-top: 1px solid gray;
+  }
+
+  .footer_address {
+    width: 1200px;
+    margin: auto;
+    padding-top: 50px;
+  }
+  #select {
+    margin-left: auto;
+  }
+}
+@media screen and (min-width: 1601px) {
+}
